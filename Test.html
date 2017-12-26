@@ -48,15 +48,15 @@ function getLocation() {
 
 function showPosition(position) {
     gps.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;
+    ", Longitude: " + position.coords.longitude;
     
- /*
-    dx = (lon - position.coords.longitude) *111111;
+ 
+    dx = (lon - position.coords.longitude)*111111;
     dy = (lat - position.coords.latitude)*111111;
     
     delta.innerHTML = "N-S: " + dy +
                   " E-W: " + dx
-    
+  /*  
 //    ctx.lineTo(x + dx, y + dy);
 //    ctx.stroke();
     
