@@ -5,7 +5,7 @@
 <button onclick="getLocation()">Try It</button>
 <div id="demo"></div>
 <div id="dist"></div>
-<canvas id="myCanvas" width="960" height="620"
+<canvas id="myCanvas" width="960" height="600"
 style="border:2px solid #c3c3c3;">
 Your browser does not support the canvas element.
 </canvas>
@@ -48,7 +48,7 @@ function getLocation() {
 
 function showPosition(position) {
     gps.innerHTML = "Latitude: " + position.coords.latitude + 
-    ", Longitude: " + position.coords.longitude;
+    ",, Longitude: " + position.coords.longitude;
     
  
     dx = (lon - position.coords.longitude)*111111;
@@ -62,11 +62,11 @@ function showPosition(position) {
     
     x = x + dx;
     y = y + dy:
-    
+  */  
  
-    lat = position.coords.latitude
-    lon = position.coords.longitude
-    */
+    lat = position.coords.latitude;
+    lon = position.coords.longitude;
+    
 }
 </script>
 
