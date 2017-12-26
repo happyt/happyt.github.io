@@ -56,13 +56,17 @@ function showPosition(position) {
     
     delta.innerHTML = "N-S: " + dy +
                   " E-W: " + dx
+    if (dx < 1000) {
+        ctx.beginPath();
+        ctx.lineWidth = 2;
+        ctx.lineCap = "round";
+        ctx.moveTo(x,y);
+        ctx.lineTo(x + dx, y + dy);
+        ctx.stroke();
     
-//    ctx.lineTo(x + dx, y + dy);
-//    ctx.stroke();
-    
-    x = x + dx;
-    y = y + dy:
-  
+        x = x + dx;
+        y = y + dy:
+    }
  
     lat = position.coords.latitude;
     lon = position.coords.longitude;
