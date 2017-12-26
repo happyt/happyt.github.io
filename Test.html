@@ -1,41 +1,68 @@
+
 <!DOCTYPE html>
 <html>
 <body>
-
-<p>Click the button to get your coordinates.</p>
-
-
-<p>This needs to be hosted on https.</p>
-
-
 <button onclick="getLocation()">Try It</button>
-
-<p id="demo"></p>
-
-<p id="dist"></p>
+<div id="demo"></div>
+<div id="dist"></div>
+<canvas id="myCanvas" width="960" height="620"
+style="border:2px solid #c3c3c3;">
+Your browser does not support the canvas element.
+</canvas>
 
 
 <script>
-var x = document.getElementById("demo");
-var y = document.getElementById("dist");
+// This needs to be hosted on https.
+
+var gps = document.getElementById("demo");
+var delta = document.getElementById("dist");
 var lat = 0;
 var lon = 0;
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+ctx.fillStyle = "#FF0000";
+ctx.fillRect(480,280,10,10);
+var x = 485;
+var y = 285;
+var dx = 0;
+var dy = 0;
+
+ctx.beginPath();
+    ctx.lineWidth = 2;
+    ctx.lineCap = "round";
+    ctx.moveTo(x,y);
+//    ctx.rotate(pos);
+    ctx.lineTo(480,275);
+    ctx.stroke();
+ 
+
 function getLocation() {
  //   alert("hi")
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
         
     } else { 
-        x.innerHTML = "Geolocation is not supported by this browser.";
+        gps.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
 
 function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    gps.innerHTML = "Latitude: " + position.coords.latitude + 
     "<br>Longitude: " + position.coords.longitude;
-    y.innerHTML = "N-S: " + (lat - position.coords.latitude)*111111 +
-                  " E-W: " + (lon - position.coords.longitude)*111111
     
+    dx = (lon - position.coords.longitude) *111111;
+    dy = (lat - position.coords.latitude)*111111;
+    
+    delta.innerHTML = "N-S: " + dy +
+                  " E-W: " + dx
+    
+    ctx.lineTo(x + dx, y + dy);
+    ctx.stroke();
+    
+    x = x + dx;
+    y = y + dy:
+    
+ 
     lat = position.coords.latitude
     lon = position.coords.longitude
 }
@@ -43,4 +70,5 @@ function showPosition(position) {
 
 </body>
 </html>
+
 
