@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-<button onclick="getLocation()">G Try It</button>
+<button onclick="whereAreWe()">G Try It</button>
 <div id="demo"></div>
 <div id="dist"></div>
 <canvas id="myCanvas" width="960" height="600"
@@ -28,18 +28,26 @@ var dx = 0.0;
 var dy = 0.0;
 var scale = 4.0;
 var count = 0;
+var eventTimer;
 
-ctx.beginPath();
-    ctx.lineWidth = 2;
-    ctx.lineCap = "round";
-    ctx.moveTo(x,y);
-//    ctx.rotate(pos);
-    ctx.lineTo(480,275);
-    ctx.stroke();
+  ctx.beginPath();
+  ctx.lineWidth = 2;
+  ctx.lineCap = "round";
+  ctx.moveTo(x,y);
+  ctx.lineTo(480,275);
+  ctx.stroke();
  
+function whereAreWe() {
+    eventTimer = setInterval(getLocation, 5000)
+    count = 0;
+}
 
 function getLocation() {
  //   alert("hi")
+    count += 1;
+    if (count >= 10) {
+        clearInterval(eventTimer)        
+    }
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
         
@@ -60,10 +68,6 @@ function showPosition(position) {
                   " E-W: " + dx
    if (dx < 1000) {
         
-        
-     //   var ctx2 = canvas.getContext("2d");
-    //    ctx2.fillStyle = "#FF0000";
-    //    ctx2.fillRect(480,280,10,10);
         ctx.beginPath();
         ctx.lineWidth = 2;
         ctx.lineCap = "round";
