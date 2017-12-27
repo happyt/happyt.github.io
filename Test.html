@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-<button onclick="getLocation()">B Try It</button>
+<button onclick="getLocation()">C Try It</button>
 <div id="demo"></div>
 <div id="dist"></div>
 <canvas id="myCanvas" width="960" height="600"
@@ -57,7 +57,7 @@ function showPosition(position) {
     delta.innerHTML = "N-S: " + dy +
                   " E-W: " + dx
    if (dx < 1000) {
-        /*
+        
         
         var ctx2 = canvas.getContext("2d");
         ctx2.fillStyle = "#FF0000";
@@ -65,10 +65,10 @@ function showPosition(position) {
         ctx2.beginPath();
         ctx2.lineWidth = 2;
         ctx2.lineCap = "round";
-        ctx2.moveTo(x,y);
-        ctx2.lineTo(x + dx, y + dy);
+        ctx2.moveTo(200,300);
+        ctx2.lineTo(220 + dx, 320 + dy);
         ctx2.stroke();
-    */
+    
     }
   //      x += dx;
   //      y += dy:
