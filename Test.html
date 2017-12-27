@@ -47,7 +47,7 @@ function getLocation() {
 }
 
 function showPosition(position) {
-    gps.innerHTML = "Latitude: " + position.coords.latitude + 
+    gps.innerHTML = "A Latitude: " + position.coords.latitude + 
     ", Longitude: " + position.coords.longitude;
     
  
@@ -61,7 +61,8 @@ function showPosition(position) {
         
         var ctx2 = canvas.getContext("2d");
         ctx2.fillStyle = "#FF0000";
-        ctx2.fillRect(480,280,10,10);2.beginPath();
+        ctx2.fillRect(480,280,10,10);
+        ctx2.beginPath();
         ctx2.lineWidth = 2;
         ctx2.lineCap = "round";
         ctx2.moveTo(x,y);
