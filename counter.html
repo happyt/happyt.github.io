@@ -1,19 +1,22 @@
 
 <!DOCTYPE html>
 <html>
+<head>
+    <title>
+        Count
+    </title>
+</head>
 <body>
-<button onclick="start()">H Try It</button>
+<button onclick="start()">Start</button>
 <div id="dist"></div>
 
-
 <script>
-
 var delta = document.getElementById("dist");
 var count = 0;
 var eventTimer;
  
 function start() {
-    eventTimer = setInterval(showCount(), 5000)
+    eventTimer = setInterval(showCount, 5000)
     count = 0;
 }
 
