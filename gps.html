@@ -65,7 +65,7 @@ function showPosition(position) {
     dy = (lat - position.coords.latitude)*111111*scale;
     
     delta.innerHTML = "N-S: " + dy +
-                  " E-W: " + dx
+                  " E-W: " + dx + "count: " + count
    if (dx < 1000) {
         
         ctx.beginPath();
