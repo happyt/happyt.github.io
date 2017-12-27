@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-<button onclick="getLocation()">E Try It</button>
+<button onclick="getLocation()">F Try It</button>
 <div id="demo"></div>
 <div id="dist"></div>
 <canvas id="myCanvas" width="960" height="600"
@@ -51,8 +51,8 @@ function showPosition(position) {
     ", Longitude: " + position.coords.longitude;
     
  
-    dx = (lon - position.coords.longitude)*111111;
-    dy = (lat - position.coords.latitude)*111111;
+    dx = (lon - position.coords.longitude)*1111110;
+    dy = (lat - position.coords.latitude)*1111110;
     
     delta.innerHTML = "N-S: " + dy +
                   " E-W: " + dx
