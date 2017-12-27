@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-<button onclick="whereAreWe()">H Try It</button>
+<button onclick="whereAreWe()">Next test</button>
 <div id="demo"></div>
 <div id="dist"></div>
 <canvas id="myCanvas" width="960" height="600"
@@ -38,7 +38,7 @@ var eventTimer;
   ctx.stroke();
  
 function whereAreWe() {
-    eventTimer = setInterval(getLocation(), 5000)
+    eventTimer = setInterval(getLocation, 5000)
     count = 0;
 }
 
@@ -57,7 +57,7 @@ function getLocation() {
 }
 
 function showPosition(position) {
-    gps.innerHTML = "B Latitude: " + position.coords.latitude + 
+    gps.innerHTML = "Latitude: " + position.coords.latitude + 
     ", Longitude: " + position.coords.longitude;
     
  
@@ -65,7 +65,7 @@ function showPosition(position) {
     dy = (lat - position.coords.latitude)*111111*scale;
     
     delta.innerHTML = "N-S: " + dy +
-                  " E-W: " + dx + "count: " + count
+                  " E-W: " + dx + ", Count: " + count
    if (dx < 1000) {
         
         ctx.beginPath();
