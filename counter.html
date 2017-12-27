@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+<button onclick="start()">H Try It</button>
+<div id="dist"></div>
+
+
+<script>
+
+var delta = document.getElementById("dist");
+var count = 0;
+var eventTimer;
+ 
+function start() {
+    eventTimer = setInterval(showCount(), 5000)
+    count = 0;
+}
+
+function showCount() {
+    alert("hi")
+    count += 1;
+    if (count >= 10) {
+        clearInterval(eventTimer)        
+    }
+    delta.innerHTML = "Count: " + count
+
+}
+</script>
+
+</body>
+</html>
