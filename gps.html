@@ -26,7 +26,7 @@ var x = 485.0;
 var y = 285.0;
 var dx = 0.0;
 var dy = 0.0;
-var scale = 10.0;
+var scale = 16.0;
 var count = 0;
 var eventTimer;
 
@@ -38,7 +38,7 @@ var eventTimer;
   ctx.stroke();
  
 function whereAreWe() {
-    eventTimer = setInterval(getLocation, 5000)
+    eventTimer = setInterval(getLocation, 2000)
     count = 0;
 }
 
