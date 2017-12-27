@@ -59,13 +59,14 @@ function showPosition(position) {
  //   if (dx < 1000) {
  //       /*
         
-        var ctx = canvas.getContext("2d");
-        ctx.beginPath();
-        ctx.lineWidth = 2;
-        ctx.lineCap = "round";
-        ctx.moveTo(x,y);
-        ctx.lineTo(x + dx, y + dy);
-        ctx.stroke();
+        var ctx2 = canvas.getContext("2d");
+        ctx2.fillStyle = "#FF0000";
+        ctx2.fillRect(480,280,10,10);2.beginPath();
+        ctx2.lineWidth = 2;
+        ctx2.lineCap = "round";
+        ctx2.moveTo(x,y);
+        ctx2.lineTo(x + dx, y + dy);
+        ctx2.stroke();
 //    */
 //    }
         x = x + dx;
