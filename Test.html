@@ -26,6 +26,7 @@ var x = 485.0;
 var y = 285.0;
 var dx = 0.0;
 var dy = 0.0;
+var scale = 4.0
 
 ctx.beginPath();
     ctx.lineWidth = 2;
@@ -51,8 +52,8 @@ function showPosition(position) {
     ", Longitude: " + position.coords.longitude;
     
  
-    dx = (lon - position.coords.longitude)*111111;
-    dy = (lat - position.coords.latitude)*111111;
+    dx = (lon - position.coords.longitude)*111111*scale;
+    dy = (lat - position.coords.latitude)*111111*scale;
     
     delta.innerHTML = "N-S: " + dy +
                   " E-W: " + dx
